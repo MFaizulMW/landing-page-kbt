@@ -693,51 +693,284 @@ body {
   justify-content: center;
   min-height: 320px;
 }
-
 /* Capture visual */
-.capture-phone {
-  width: 180px;
-  background: #1a1a1a;
-  border-radius: 24px;
-  padding: 8px;
-  box-shadow: var(--shadow-lg);
+.capture-visual {
+  padding: 40px;
+  background: var(--gray-100);
 }
-.capture-screen {
-  background: #111;
-  border-radius: 18px;
-  height: 240px;
-  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
-  padding: 16px;
+
+/* ── PHONE FRAME wrapper — same geometry as hero mockup ── */
+.cam-phone-frame {
+  width: 280px;
+  height: 596px;
+  background: #0e0e0e;
+  border-radius: 48px;
+  padding: 10px;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.08),
+    0 32px 72px rgba(0,0,0,.5),
+    0 8px 24px rgba(0,0,0,.3);
 }
-.capture-frame {
+.cam-phone-frame::before {
+  content: '';
+  position: absolute;
+  right: -2.5px; top: 108px;
+  width: 2.5px; height: 58px;
+  background: #222; border-radius: 0 3px 3px 0;
+}
+.cam-phone-frame::after {
+  content: '';
+  position: absolute;
+  left: -2.5px; top: 72px;
+  width: 2.5px; height: 28px;
+  background: #222; border-radius: 3px 0 0 3px;
+  box-shadow: 0 42px 0 #222, 0 78px 0 #222;
+}
+.cam-phone-screen {
+  width: 100%; height: 100%;
+  background: #000;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cam-dynamic-island {
+  width: 88px; height: 26px;
+  background: #0e0e0e;
+  border-radius: 20px;
+  margin: 10px auto 0;
+  flex-shrink: 0;
+}
+
+/* ── CAMERA UI inside the phone ─────────────────────── */
+.camera-ui {
+  flex: 1;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* Viewfinder — takes most of the remaining height */
+.cam-viewfinder {
+  position: relative;
   flex: 1;
   width: 100%;
-  border-radius: 10px;
-  background: rgba(255,255,255,.03);
+  background: #111;
+  overflow: hidden;
+}
+/* vignette overlay on top of photo */
+.cam-viewfinder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.45) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+/* actual product photo in viewfinder */
+.cam-subject-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: 0;
+}
+/* top controls */
+.cam-top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, transparent 100%);
+}
+.cam-mode-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #ffcc00;
+}
+/* grid lines */
+.cam-grid { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.cam-line { position: absolute; background: rgba(255,255,255,.15); }
+.cam-h    { left: 0; right: 0; height: 1px; }
+.cam-v    { top: 0; bottom: 0; width: 1px; }
+/* focus ring */
+.cam-focus {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -60%);
+  width: 52px; height: 52px;
+  z-index: 5;
+}
+.cam-focus-ring {
+  position: absolute; inset: 0;
+  border: 1.5px solid #ffcc00;
+  border-radius: 4px;
+  animation: focus-pulse 2s ease-in-out infinite;
+}
+@keyframes focus-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .6; transform: scale(.96); }
+}
+.cam-focus-cross {
+  position: absolute;
+  background: #ffcc00;
+  opacity: .7;
+}
+.cam-focus-cross.h { height: 1px; width: 8px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.cam-focus-cross.v { width: 1px; height: 8px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+/* scan corners */
+.cam-viewfinder .c-corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: rgba(255,255,255,.75);
+  border-style: solid;
+  z-index: 5;
+}
+.cam-viewfinder .c-tl { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
+.cam-viewfinder .c-tr { top: 10px; right: 10px; border-width: 2px 2px 0 0; }
+.cam-viewfinder .c-bl { bottom: 10px; left: 10px; border-width: 0 0 2px 2px; }
+.cam-viewfinder .c-br { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+/* exposure bar */
+.cam-exposure {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 5;
+}
+/* small breathing room between viewfinder and mode row */
+.cam-spacer { height: 6px; background: #000; flex-shrink: 0; }
+/* home indicator */
+.cam-home-bar {
+  height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: #000;
+  flex-shrink: 0;
+}
+.cam-home-bar::after {
+  content: '';
+  width: 100px; height: 4px;
+  background: rgba(255,255,255,.3);
+  border-radius: 999px;
+}
+
+/* strategy label with inline SVG icon */
+.strat-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray-700);
+}
+.cam-exp-track {
+  width: 3px;
+  height: 72px;
+  background: rgba(255,255,255,.2);
+  border-radius: 999px;
   position: relative;
+}
+.cam-exp-thumb {
+  width: 8px; height: 8px;
+  background: #ffcc00;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(255,204,0,.6);
+}
+/* mode selector row — VIDEO · PHOTO · PORTRAIT */
+.cam-mode-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0 4px;
+  background: #000;
+}
+.cam-mode-item {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.35);
+  cursor: pointer;
+}
+.cam-mode-item.cam-mode-active {
+  color: #ffcc00;
+}
+/* zoom row */
+.cam-zoom-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 0;
+  background: #000;
+}
+.cam-zoom-opt {
+  width: 40px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.4);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.cam-zoom-active {
+  background: rgba(255,255,255,.14);
+  color: #ffcc00;
+}
+/* bottom controls */
+.cam-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 20px;
+  background: #000;
+}
+.cam-thumb {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,.35);
+}
+.cam-thumb-img {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #8b3a2a, #4a1f15);
+  opacity: .85;
+}
+.cam-shutter {
+  width: 68px; height: 68px;
   display: flex; align-items: center; justify-content: center;
 }
-.c-corner {
-  position: absolute;
-  width: 20px; height: 20px;
-  border-color: rgba(255,255,255,.6);
-  border-style: solid;
+.cam-shutter-ring {
+  width: 64px; height: 64px;
+  border: 2.5px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: transform .15s;
 }
-.c-corner.c-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
-.c-corner.c-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
-.c-corner.c-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
-.c-corner.c-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
-.capture-shutter {
-  width: 48px; height: 48px;
+.cam-shutter-ring:hover { transform: scale(.95); }
+.cam-shutter-btn {
+  width: 52px; height: 52px;
   background: #fff;
   border-radius: 50%;
-  border: 3px solid rgba(255,255,255,.3);
-  box-shadow: 0 0 0 3px rgba(255,255,255,.1);
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform .2s;
 }
-.capture-shutter:hover { transform: scale(.95); }
+.cam-flip {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
 
 /* Analyze visual */
 .analyze-card {
@@ -906,11 +1139,7 @@ body {
   transition: background var(--transition);
 }
 .strategy:hover { background: var(--gray-200); }
-.active-strat {
-  background: rgba(26,92,79,.08) !important;
-  color: var(--teal) !important;
-  border: 1px solid rgba(26,92,79,.2);
-}
+/* active-strat removed — both strategy options use same neutral style */
 
 /* ── APP GUIDE ───────────────────────────────────── */
 .guide {
@@ -1146,6 +1375,7 @@ body {
 }
 .price-currency { font-size: 1.1rem; font-weight: 700; }
 .price-num { font-size: 3rem; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+.price-num-custom { font-size: 2.2rem; letter-spacing: -.02em; }
 .price-period { font-size: .9rem; color: var(--gray-500); }
 .pricing-featured .price-period { color: rgba(255,255,255,.6); }
 .pricing-desc {
