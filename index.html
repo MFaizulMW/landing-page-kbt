@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumio — Smart Pricing for Second-Hand Sellers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="8" fill="#1a5c4f"/>
+            <path d="M8 19V12l6-4 6 4v7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 19v-4h6v4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="10" r="3" fill="#e8a87c"/>
+            <path d="M19 10l.8.8 1.4-1.6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo-text">Lumio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#guide">Guide</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <a href="#pricing" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+    <div class="hero-bg-blob blob-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Pricing · Khusus Indonesia
+      </div>
+      <h1 class="hero-title">
+        Foto barangmu.<br />
+        <span class="gradient-text">Harga terbaik</span><br />
+        dalam 5 detik.
+      </h1>
+      <p class="hero-sub">
+        Lumio menganalisis kondisi fisik barang preloved-mu via AI dan memberikan rekomendasi harga kompetitif berdasarkan data pasar real-time dari Tokopedia, Shopee & Carousell.
+      </p>
+      <div class="hero-actions">
+        <a href="#guide" class="btn btn-primary">
+          Coba Sekarang
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost">Lihat cara kerja</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">5 det</span>
+          <span class="stat-label">rata-rata analisis</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3 mktp</span>
+          <span class="stat-label">data marketplace</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">Free</span>
+          <span class="stat-label">mulai gratis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHONE MOCKUP -->
+    <div class="hero-phone">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="app-screen">
+            <!-- Dynamic Island — inside screen like real iPhone -->
+            <div class="dynamic-island"></div>
+            <div class="app-header">
+              <div class="app-header-left">
+                <div class="app-avatar"></div>
+                <div>
+                  <div class="app-greeting">Hai, Faizul 👋</div>
+                  <div class="app-sub-text">Scan barang barumu</div>
+                </div>
+              </div>
+              <div class="app-bell">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+            </div>
+
+            <div class="scan-card">
+              <div class="scan-preview">
+                <div class="scan-img-placeholder">
+                  <div class="scan-corner tl"></div>
+                  <div class="scan-corner tr"></div>
+                  <div class="scan-corner bl"></div>
+                  <div class="scan-corner br"></div>
+                  <img
+                    src="property/kbt%20property.jpg"
+                    alt="Kemeja Flannel Uniqlo"
+                    class="scan-item-photo"
+                  />
+                  <div class="scan-pulse"></div>
+                  <div class="ai-detect-badge">
+                    <span class="ai-dot"></span>
+                    AI Scanning…
+                  </div>
+                </div>
+                <!-- Detected tags -->
+                <div class="detected-tags">
+                  <span class="dtag dtag-brand">UNIQLO</span>
+                  <span class="dtag dtag-model">Flannel Shirt</span>
+                  <span class="dtag dtag-condition">Bagus ✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header-row">
+                <div class="result-label">Rekomendasi Harga</div>
+                <span class="result-done-badge">✓ Selesai</span>
+              </div>
+              <div class="result-item-name">UNIQLO Flannel Check Shirt · M</div>
+              <div class="result-price">Rp 95.000</div>
+              <div class="result-range">Range: Rp 75K – Rp 130K</div>
+              <div class="result-bars">
+                <div class="bar-row">
+                  <span class="bar-mp">Tokopedia</span>
+                  <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+                  <span class="bar-price">Rp 100K</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-mp">Shopee</span>
+                  <div class="bar-track"><div class="bar-fill" style="width:68%"></div></div>
+                  <span class="bar-price">Rp 85K</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-mp">Carousell</span>
+                  <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+                  <span class="bar-price">Rp 110K</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-bottom-nav">
+              <div class="bnav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span>
+              </div>
+              <div class="bnav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <span>Scan</span>
+              </div>
+              <div class="bnav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>History</span>
+              </div>
+              <div class="bnav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Profile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-glow"></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM STRIP -->
+  <section class="problem-strip">
+    <div class="container">
+      <p class="problem-lead">Penjual barang bekas di Indonesia menghadapi 3 masalah utama —</p>
+      <div class="problem-cards">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6655" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Pricing Bias</h3>
+          <p>Terlalu murah (rugi margin) atau terlalu mahal (barang mengendap)</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6655" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Riset Makan Waktu</h3>
+          <p>Membandingkan harga manual di banyak marketplace bisa berjam-jam</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6655" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </div>
+          <h3>Penilaian Subjektif</h3>
+          <p>Sulit menilai seberapa besar noda atau lecet memengaruhi harga jual</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">How It Works</div>
+        <h2 class="section-title">4 langkah.<br /><span class="gradient-text">Harga optimal.</span></h2>
+        <p class="section-sub">Dari foto hingga rekomendasi harga — semuanya otomatis, akurat, dan seketika.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step" data-step="01">
+          <div class="step-visual capture-visual">
+            <div class="capture-phone">
+              <div class="capture-screen">
+                <div class="capture-frame">
+                  <div class="c-corner c-tl"></div>
+                  <div class="c-corner c-tr"></div>
+                  <div class="c-corner c-bl"></div>
+                  <div class="c-corner c-br"></div>
+                </div>
+                <div class="capture-shutter"></div>
+              </div>
+            </div>
+          </div>
+          <div class="step-content">
+            <span class="step-num">01</span>
+            <h3>Capture</h3>
+            <p>Ambil foto barang dari beberapa sudut — depan, belakang, dan area dengan kondisi khusus. Semakin detail, semakin akurat analisis AI.</p>
+            <ul class="step-tips">
+              <li>Gunakan pencahayaan yang cukup</li>
+              <li>Foto minimal 2 sisi barang</li>
+              <li>Pastikan kondisi fisik terlihat jelas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step step-reverse" data-step="02">
+          <div class="step-content">
+            <span class="step-num">02</span>
+            <h3>Analyze</h3>
+            <p>AI Vision kami memindai foto untuk mengenali brand, model, kategori, serta kondisi fisik seperti noda, lecet, dan tingkat keausan secara otomatis.</p>
+            <ul class="step-tips">
+              <li>Deteksi brand & model otomatis</li>
+              <li>Penilaian kondisi: Baru / Bagus / Cukup / Kurang</li>
+              <li>Proses &lt;5 detik</li>
+            </ul>
+          </div>
+          <div class="step-visual analyze-visual">
+            <div class="analyze-card">
+              <div class="analyze-row">
+                <span class="analyze-key">Brand</span>
+                <span class="analyze-val typing" data-text="Nike">Nike</span>
+              </div>
+              <div class="analyze-row">
+                <span class="analyze-key">Model</span>
+                <span class="analyze-val typing" data-text="Dunk Low">Dunk Low</span>
+              </div>
+              <div class="analyze-row">
+                <span class="analyze-key">Kategori</span>
+                <span class="analyze-val typing" data-text="Sepatu Sneaker">Sepatu Sneaker</span>
+              </div>
+              <div class="analyze-row">
+                <span class="analyze-key">Kondisi</span>
+                <span class="analyze-val condition-badge">Bagus ✓</span>
+              </div>
+              <div class="analyze-row">
+                <span class="analyze-key">Keausan</span>
+                <div class="wear-bar"><div class="wear-fill" style="width: 30%"></div></div>
+              </div>
+              <div class="analyze-progress">
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+                <span class="progress-label">Menganalisis…</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="03">
+          <div class="step-visual compare-visual">
+            <div class="compare-cards">
+              <div class="compare-mp-card">
+                <span class="mp-name">Tokopedia</span>
+                <span class="mp-price">Rp 190K</span>
+                <div class="mp-bar"><div style="width:78%"></div></div>
+              </div>
+              <div class="compare-mp-card">
+                <span class="mp-name">Shopee</span>
+                <span class="mp-price">Rp 175K</span>
+                <div class="mp-bar"><div style="width:65%"></div></div>
+              </div>
+              <div class="compare-mp-card">
+                <span class="mp-name">Carousell</span>
+                <span class="mp-price">Rp 185K</span>
+                <div class="mp-bar"><div style="width:71%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="step-content">
+            <span class="step-num">03</span>
+            <h3>Compare</h3>
+            <p>Hasil analisis kondisi dibandingkan dengan ribuan data harga live dari Tokopedia, Shopee, dan Carousell untuk menentukan posisi pasar barangmu.</p>
+            <ul class="step-tips">
+              <li>Data harga real-time 3 marketplace</li>
+              <li>Filter berdasarkan kondisi serupa</li>
+              <li>Lihat tren harga historis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step step-reverse" data-step="04">
+          <div class="step-content">
+            <span class="step-num">04</span>
+            <h3>Output</h3>
+            <p>Dapatkan rekomendasi harga jual optimal, rentang harga pasar, dan saran positioning — apakah mau cepat laku atau maksimalkan margin.</p>
+            <ul class="step-tips">
+              <li>Harga rekomendasi + range min–max</li>
+              <li>Saran: "Cepat Laku" atau "Maksimalkan Profit"</li>
+              <li>Simpan & bagikan langsung ke listing</li>
+            </ul>
+          </div>
+          <div class="step-visual output-visual">
+            <div class="output-card">
+              <div class="output-header">
+                <span class="output-title">Rekomendasi Harga</span>
+                <span class="output-badge">✓ Selesai</span>
+              </div>
+              <div class="output-price-big">Rp 185.000</div>
+              <div class="output-range-bar">
+                <span class="range-label">Rp 150K</span>
+                <div class="range-track">
+                  <div class="range-fill"></div>
+                  <div class="range-dot"></div>
+                </div>
+                <span class="range-label">Rp 220K</span>
+              </div>
+              <div class="output-strategies">
+                <div class="strategy active-strat">
+                  <span>⚡ Cepat Laku</span>
+                  <span>Rp 155K</span>
+                </div>
+                <div class="strategy">
+                  <span>💰 Maks. Profit</span>
+                  <span>Rp 210K</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP GUIDE -->
+  <section class="guide" id="guide">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">App Guide</div>
+        <h2 class="section-title">Panduan<br /><span class="gradient-text">penggunaan Lumio</span></h2>
+        <p class="section-sub">Ikuti langkah-langkah berikut untuk mendapatkan estimasi harga yang akurat.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-step-card" style="--delay: 0ms">
+          <div class="guide-number">1</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Download & Daftar</h3>
+          <p>Unduh Lumio dari App Store atau Play Store, lalu buat akun gratis dengan email atau Google.</p>
+          <div class="guide-chip">Gratis · &lt;2 menit</div>
+        </div>
+
+        <div class="guide-step-card" style="--delay: 80ms">
+          <div class="guide-number">2</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3>Foto Barang</h3>
+          <p>Tap tombol Scan di bagian tengah bottom navigation, lalu foto barangmu dari depan, belakang, dan sisi samping.</p>
+          <div class="guide-chip">Tips: cahaya alami terbaik</div>
+        </div>
+
+        <div class="guide-step-card" style="--delay: 160ms">
+          <div class="guide-number">3</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h3>Isi Detail Barang</h3>
+          <p>Konfirmasi atau koreksi brand, model, dan kategori yang terdeteksi AI. Tambahkan deskripsi singkat jika perlu.</p>
+          <div class="guide-chip">AI bantu deteksi otomatis</div>
+        </div>
+
+        <div class="guide-step-card" style="--delay: 240ms">
+          <div class="guide-number">4</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Pilih Kondisi</h3>
+          <p>Pilih dari 4 level kondisi — Baru, Bagus, Cukup, atau Perlu Perbaikan — untuk menyempurnakan analisis harga.</p>
+          <div class="guide-chip">4 tingkat kondisi</div>
+        </div>
+
+        <div class="guide-step-card" style="--delay: 320ms">
+          <div class="guide-number">5</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Lihat Harga</h3>
+          <p>Lumio menampilkan harga rekomendasi beserta perbandingan harga di 3 marketplace dan saran strategi jual.</p>
+          <div class="guide-chip">Real-time · &lt;5 detik</div>
+        </div>
+
+        <div class="guide-step-card" style="--delay: 400ms">
+          <div class="guide-number">6</div>
+          <div class="guide-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <h3>Simpan & Bagikan</h3>
+          <p>Simpan hasil analisis ke riwayat atau langsung salin ke clipboard untuk dipasang di listing marketplace-mu.</p>
+          <div class="guide-chip">One-tap share</div>
+        </div>
+      </div>
+
+      <!-- Condition Guide -->
+      <div class="condition-guide">
+        <h3 class="condition-title">Panduan Kondisi Barang</h3>
+        <div class="condition-grid">
+          <div class="condition-card new">
+            <div class="condition-badge-big">Baru</div>
+            <ul>
+              <li>Belum pernah dipakai</li>
+              <li>Tag masih terpasang</li>
+              <li>Tanpa cacat apapun</li>
+            </ul>
+            <div class="condition-multiplier">100% harga pasar</div>
+          </div>
+          <div class="condition-card good">
+            <div class="condition-badge-big">Bagus</div>
+            <ul>
+              <li>Sudah dipakai, kondisi prima</li>
+              <li>Lecet atau noda minor</li>
+              <li>Tidak ada kerusakan signifikan</li>
+            </ul>
+            <div class="condition-multiplier">75–90% harga pasar</div>
+          </div>
+          <div class="condition-card fair">
+            <div class="condition-badge-big">Cukup</div>
+            <ul>
+              <li>Tanda pemakaian terlihat jelas</li>
+              <li>Noda atau lecet yang cukup signifikan</li>
+              <li>Masih fungsional sepenuhnya</li>
+            </ul>
+            <div class="condition-multiplier">50–70% harga pasar</div>
+          </div>
+          <div class="condition-card poor">
+            <div class="condition-badge-big">Perlu Perbaikan</div>
+            <ul>
+              <li>Kerusakan yang terlihat jelas</li>
+              <li>Perlu servis atau restorasi</li>
+              <li>Masih bisa digunakan</li>
+            </ul>
+            <div class="condition-multiplier">25–45% harga pasar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">Semua yang kamu<br /><span class="gradient-text">butuhkan untuk jual.</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-big">
+          <div class="feature-icon-big">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a5c4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>AI Visual Detection</h3>
+          <p>Computer vision canggih yang mengenali brand, model, dan kondisi fisik barang hanya dari foto — tanpa input manual.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Harga Real-time</h3>
+          <p>Data harga live dari Tokopedia, Shopee, dan Carousell diperbarui setiap hari.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Instan &lt;5 Detik</h3>
+          <p>Dari foto ke rekomendasi harga dalam waktu kurang dari 5 detik.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Strategi Jual</h3>
+          <p>Saran "Cepat Laku" atau "Maksimalkan Profit" berdasarkan kondisi pasar saat ini.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Riwayat Analisis</h3>
+          <p>Simpan semua hasil analisis dan pantau perubahan harga pasar dari waktu ke waktu.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Notifikasi Harga</h3>
+          <p>Dapatkan notifikasi ketika harga pasar barang yang kamu pantau berubah signifikan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <h3>One-tap Share</h3>
+          <p>Salin deskripsi dan harga langsung ke clipboard untuk dipasang di marketplace.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Mulai gratis.<br /><span class="gradient-text">Upgrade kapan saja.</span></h2>
+        <p class="section-sub">Tidak ada kontrak, tidak ada ikatan. Bayar bulanan, batal kapan saja.</p>
+      </div>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price">
+            <span class="price-currency">Rp</span>
+            <span class="price-num">0</span>
+            <span class="price-period">/bulan</span>
+          </div>
+          <p class="pricing-desc">Cocok untuk penjual kasual yang baru mulai.</p>
+          <ul class="pricing-features">
+            <li><span class="feat-check">✓</span> 5 scan gratis per hari</li>
+            <li><span class="feat-check">✓</span> Rekomendasi harga dasar</li>
+            <li><span class="feat-check">✓</span> Perbandingan 3 marketplace</li>
+            <li><span class="feat-check">✓</span> Riwayat 7 hari</li>
+            <li class="feat-disabled"><span>✕</span> Analisis kondisi detail</li>
+            <li class="feat-disabled"><span>✕</span> Notifikasi harga</li>
+            <li class="feat-disabled"><span>✕</span> Strategi jual lanjutan</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Mulai Gratis</a>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-popular">Paling Populer</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">
+            <span class="price-currency">Rp</span>
+            <span class="price-num">39K</span>
+            <span class="price-period">/bulan</span>
+          </div>
+          <p class="pricing-desc">Untuk reseller dan thrift seller aktif yang butuh kecepatan dan akurasi.</p>
+          <ul class="pricing-features">
+            <li><span class="feat-check">✓</span> Scan <strong>tidak terbatas</strong></li>
+            <li><span class="feat-check">✓</span> Analisis kondisi fisik detail</li>
+            <li><span class="feat-check">✓</span> Data harga real-time</li>
+            <li><span class="feat-check">✓</span> Strategi jual: Cepat / Profit</li>
+            <li><span class="feat-check">✓</span> Notifikasi perubahan harga</li>
+            <li><span class="feat-check">✓</span> Riwayat tidak terbatas</li>
+            <li><span class="feat-check">✓</span> One-tap listing share</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Mulai Pro — Rp 39K/bln</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">B2B</div>
+          <div class="pricing-price">
+            <span class="price-num" style="font-size:2rem">Custom</span>
+          </div>
+          <p class="pricing-desc">Untuk toko thrift, reseller besar, atau enterprise yang butuh akses data massal.</p>
+          <ul class="pricing-features">
+            <li><span class="feat-check">✓</span> Semua fitur Pro</li>
+            <li><span class="feat-check">✓</span> API access</li>
+            <li><span class="feat-check">✓</span> Data insights B2B</li>
+            <li><span class="feat-check">✓</span> Batch pricing (banyak item)</li>
+            <li><span class="feat-check">✓</span> Dedicated support</li>
+            <li><span class="feat-check">✓</span> Custom integration</li>
+          </ul>
+          <a href="mailto:hello@lumio.id" class="btn btn-outline">Hubungi Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-blob"></div>
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Mulai jual lebih cerdas hari ini.</h2>
+        <p>Bergabung dengan ribuan penjual preloved Indonesia yang sudah menggunakan Lumio untuk mendapatkan harga terbaik.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Coba Gratis Sekarang
+          </a>
+          <div class="app-badges">
+            <div class="app-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </div>
+            <div class="app-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.28.15.6.21.93.17l12.23-12.23L13.06 8.5 3.18 23.76zM20.5 10.59l-2.62-1.5-3.13 3.13 3.13 3.13 2.64-1.51c.75-.43.75-1.72-.02-2.25zM1.53.3C1.2.63 1 1.16 1 1.84v20.32c0 .68.2 1.21.54 1.54l.08.07 11.39-11.39v-.27L1.61.23l-.08.07zm12.36 11.87l-3.13-3.13L2.48 1.8c.29-.28.7-.43 1.14-.38l13.28 7.59-3.01 3.16z"/></svg>
+              Play Store
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <rect width="28" height="28" rx="8" fill="#1a5c4f"/>
+                <path d="M8 19V12l6-4 6 4v7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 19v-4h6v4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="20" cy="10" r="3" fill="#e8a87c"/>
+              </svg>
+            </span>
+            <span class="logo-text">Lumio</span>
+          </a>
+          <p>Smart Pricing for Second-Hand Sellers.<br />Harga terbaik, mulai dari foto.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#guide">App Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Perusahaan</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Karir</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Dukungan</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Kontak</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Lumio · Made with ❤ by KBT Kelompok 2</p>
+        <p class="footer-team">Risyad · Tabah · Faizul · Zevanya · Adinda</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
